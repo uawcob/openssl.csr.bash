@@ -1,8 +1,8 @@
 #!/bin/bash
-site_name="example.com"
-email_address="webmaster@$site_name"
-organization="$site_name"
-organizational_unit="$site_name"
+site_name="example.walton.uark.edu"
+email_address="wcobhelp@uark.edu"
+organization="University of Arkansas"
+organizational_unit="Sam M. Walton College of Business"
 country="US"
 state="AR"
 city="Fayetteville"
@@ -16,12 +16,7 @@ use_subject_alternative_names=true
 # failure to include CN as one of the SANs will result in certificate errors in some browsers
 declare -a subject_alternative_names=(
   "$site_name"
-  "www.$site_name"
-  "dev.$site_name"
-  "test.$site_name"
   "*.$site_name"
-  "example.net"
-  "example.org"
 )
 
 set -e
