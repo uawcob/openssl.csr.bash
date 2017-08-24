@@ -18,14 +18,18 @@ execute the script
 
     ./openssl.csr.bash
 
-## converting formats (.crt/.pem/.cer & .key) to .pfx
-Microsoft's IIS uses the `pfx` format, so you will need to [convert it][7]
+## verify certificate signing request
 
-    openssl pkcs12 -export -out example.com.pfx -inkey example.com.key -in example.com.crt
+    openssl req -noout -text -in example.com.csr
 
 ## verify signed certificate
 
     openssl x509 -noout -text -in example.com.crt
+
+## converting formats (.crt/.pem/.cer & .key) to .pfx
+Microsoft's IIS uses the `pfx` format, so you will need to [convert it][7]
+
+    openssl pkcs12 -export -out example.com.pfx -inkey example.com.key -in example.com.crt
 
 ## verify server installation
 
